@@ -77,6 +77,7 @@ export default {
                 const url = 'cognito-idp.ap-south-1.amazonaws.com/ap-south-1_2R8h4MmpH'
                 const Logins = {}
                 Logins[url] = context.state.auth.getSignInUserSession().getIdToken().getJwtToken()
+                console.log(context.state.auth.getSignInUserSession().getIdToken().getJwtToken())
                 AWS.config.credentials = new AWS.CognitoIdentityCredentials({
                     AllowUnauthenticatedIdentities: true,
                     IdentityPoolId : 'ap-south-1:b5cc8a97-9479-431f-bd8e-b321d7ccee19',
