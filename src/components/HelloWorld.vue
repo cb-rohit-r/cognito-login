@@ -1,23 +1,18 @@
 <template>
   <div>
     <button @click= 'make_request'>Make request</button>
+    <button @click= 'logout'>Logout</button>
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
 import HttpClient from '../api/httpClient'
 
 export default {
   name: 'HelloWorld',
-  data() {
-    return {
-      msg: 'Welcome to Your Vue.js App',
-    };
-  },
   computed: {
     credentials () {
-      return this.$store.getters.getCredential
+      return this.$store.getters.getCredentials
     }
   },
   methods: {
@@ -32,8 +27,12 @@ export default {
       }).catch((err) => {
         console.log(err);
       })
+    },
+    logout() {
+      this.$store.dispatch('logout')
     }
-  }
+  },
+  
 };
 </script>
 

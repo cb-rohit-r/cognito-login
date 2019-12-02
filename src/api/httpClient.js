@@ -10,7 +10,6 @@ class HttpClient {
   }
 
   send({ method, data, path }) {
-    // if method == get, data should be appended as query
     const request = {
       method,
       path,

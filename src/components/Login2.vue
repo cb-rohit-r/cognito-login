@@ -5,18 +5,23 @@
 </template>
 
 <script>
-import { CognitoAuth } from 'amazon-cognito-auth-js';
-import AWS from 'aws-sdk'
+
+import CognitoHelper from '../helper/CognitoHelper'
+import { REGION, COGNITO_CONF, URL, IDENTITY_POOL_ID } from '../env'
 
 export default {
-  name: 'Login',
+  name: 'Login2',
   data() {
       return {
     }
   },
+  beforeCreate(){
+      const cognitoHelper = new CognitoHelper(COGNITO_CONF, REGION, URL, IDENTITY_POOL_ID);
+      cognitoHelper.initAuth();
+  },
   methods: {
     login() {
-      this.$store.dispatch('login')
+         this.cognitoHelper.login()
     }
   },
 };

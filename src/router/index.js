@@ -1,10 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import HelloWorld from '@/components/HelloWorld';
-import Login from '@/components/Login';
+import Login2 from '@/components/Login2';
 import Vuex from 'vuex'
-
-import store from '../store/store'
 
 Vue.use(Router);
 Vue.use(Vuex)
@@ -26,15 +24,16 @@ const router = new Router({
     },
     {
       path: '/login',
-      name: 'Login',
-      component: Login
+      name: 'Login2',
+      component: Login2
     },
   ],
 });
 
 // router.beforeEach((to, from, next) => {
 //   if (to.matched.some(record => record.meta.requiresAuth)) {
-//     if (!store.getters.isLoggedIn) {
+//     console.log(store.state.isLoggedIn)
+//     if (!store.state.isLoggedIn) {
 //         next({
 //           path: '/login',
 //           params: { nextUrl: to.fullPath }

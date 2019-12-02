@@ -13,9 +13,5 @@ new Vue({
   router,
   components: { App },
   store,
-  template: '<App/>',
-  beforeCreate() {
-    this.$store.dispatch('initAuth', { url : window.location.href });
-    this.$store.dispatch('initAws');
-  },
+  template: '<App/>'
 });
